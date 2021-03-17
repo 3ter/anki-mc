@@ -47,6 +47,7 @@ from .packaging.packaging import version
 default_conf_local = {'version': "2.4.0"}
 default_conf_syncd = {'version': "2.4.0"}
 
+
 def getSyncedConfig():
     # Synced preferences
     if mw.col.get_config("mc_conf") is None:
@@ -55,6 +56,7 @@ def getSyncedConfig():
         mw.col.setMod()
 
     return mw.col.get_config("mc_conf")
+
 
 def updateSyncedConfig():
     print("Updating config DB from earlier MC release")
@@ -66,12 +68,14 @@ def updateSyncedConfig():
     mw.col.set_config("mc_conf", tmp_conf)
     mw.col.setMod()
 
+
 def getLocalConfig():
     # Local preferences
     if 'mc_conf' not in mw.pm.profile:
         mw.pm.profile["mc_conf"] = default_conf_local
 
     return mw.pm.profile["mc_conf"]
+
 
 def updateLocalConfig():
     for key in list(default_conf_local.keys()):

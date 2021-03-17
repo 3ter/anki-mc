@@ -490,6 +490,7 @@ aio_fields = {
     "extra": "Extra 1"
 }
 
+
 def addModel(col):
     """Add add-on note type to collection"""
     models = col.models
@@ -504,10 +505,11 @@ def addModel(col):
     template['qfmt'] = card_front
     template['afmt'] = card_back
     model['css'] = card_css
-    model['sortf'] = 1 # set sortfield to question
+    model['sortf'] = 1  # set sortfield to question
     models.addTemplate(model, template)
     models.add(model)
     return model
+
 
 def updateTemplate(col):
     """Update add-on note templates"""
